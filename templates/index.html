@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 40px; }
+        #chatbox { width: 50%; margin: auto; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        .message { text-align: left; margin: 5px 0; }
+        .user { color: blue; }
+        .bot { color: green; }
+    </style>
+</head>
+<body>
+    <h2>Legal Assistant Chatbot</h2>
+    <div id="chatbox">
+        <div id="chat-log"></div>
+        <input type="text" id="user-input" placeholder="Ask a legal question...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let userInput = document.getElementById("user-input").value;
+            if (!userInput) return;
+
+            let chatLog = document.getElementById("chat-log");
+            chatLog.innerHTML += `<p class="message user"><b>You:</b> ${userInput}</p>`;
+            document.getElementById("user-input").value = "";
+
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ query: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatLog.innerHTML += `<p class="message bot"><b>Bot:</b> ${data.response}</p>`;
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
+curl https://api.openai.com/v1/models -H "Authorization: Bearer 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"

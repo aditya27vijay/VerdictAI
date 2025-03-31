@@ -94,6 +94,7 @@ nbconvert==7.16.6
 nbformat==5.10.4
 nest-asyncio==1.6.0
 networkx==3.4.2
+nltk==3.9.1
 notebook==7.3.2
 notebook_shim==0.2.4
 numpy==2.1.2
@@ -126,6 +127,7 @@ python-json-logger==3.2.1
 python-multipart==0.0.20
 python-slugify==8.0.4
 pytz==2024.2
+pywin32==308
 pywinpty==2.0.15
 PyYAML==6.0.2
 pyzmq==26.2.0
@@ -142,7 +144,8 @@ scikit-learn==1.5.2
 scipy==1.14.1
 seaborn==0.13.2
 Send2Trash==1.8.3
-sentence-transformers==4.0.1
+sentence-transformers==2.2.2
+sentencepiece==0.2.0
 setuptools==75.8.2
 shellingham==1.5.4
 six==1.16.0

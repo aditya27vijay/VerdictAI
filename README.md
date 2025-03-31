@@ -36,12 +36,12 @@ Ensure you have **Python 3.8+** installed. Then, run:
 pip install -r requirements.txt
 ```
 
- 3️⃣ Set Up Environment Variables 
+## 3️⃣ Set Up Environment Variables 
  Create a .env file in the backend folder and add your API key: 
  ```sh
 Copy Edit DEEPINFRA_API_KEY=your_api_key_here
 ```
-4️⃣ Run the FastAPI Server 
+## 4️⃣ Run the FastAPI Server 
 ```sh
  Copy Edit uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
